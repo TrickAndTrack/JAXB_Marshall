@@ -11,3 +11,6 @@ public class MarshallingApplication {
 	}
 
 }
+// https://youtu.be/w3WibDOie1Y?si=YopbwNJzyD8pQ9g3
+// https://github.com/camelya58/spring-jaxb
+// https://youtu.be/j9KypS10ry0?si=gHfrpb2uqYz90ksk
