@@ -3,6 +3,7 @@ package com.jaxb.controller;
 import com.jaxb.model.Employee;
 import com.jaxb.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.xml.bind.JAXBException;
@@ -17,7 +18,7 @@ public class EmployeeController {
 
     // http://localhost:8080/api/v2
     @PostMapping
-    public Employee saveUser(@RequestBody Employee employee) throws JAXBException {
+    public Employee saveUser(@RequestBody Employee employee)   {
         return employeeService.saveUser(employee);
     }
 
@@ -27,7 +28,10 @@ public class EmployeeController {
         return employeeService.fetchAllEmployee();
     }
 
-
+    @GetMapping("/file")
+    public void getXmlFile() throws JAXBException {
+        employeeService.recordsXml();
+    }
 
 
 }
