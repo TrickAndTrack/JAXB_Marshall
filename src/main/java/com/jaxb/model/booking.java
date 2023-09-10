@@ -8,6 +8,8 @@ import jakarta.persistence.Id;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+
+import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -19,17 +21,21 @@ import javax.xml.bind.annotation.XmlElement;
 @Data
 @XmlRootElement(name = "employee_rec")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Employee {
-
+public class booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @XmlElement(name = "id", required = true)
-    private Integer id;
-    @XmlElement(name = "firstName")
-    private String firstName;
-    @XmlElement(name = "lastName")
-    private String lastName;
-    @XmlElement(name = "income")
-    private double income;
+    private Long id;
+    @XmlElement(name = "bookingItem")
+    private String bookingItem;
+    @XmlElement(name = "bookingUniqueNumber")
+    private String bookingUniqueNumber;
+    @XmlElement(name = "userUniqueNumber")
+    @NotEmpty(message = "User Unique Id may not be empty")
+    private String userUniqueNumber;
+    @XmlElement(name = "quantity")
+    private String quantity;
+    @XmlElement(name = "prize")
+    private double prize;
 }
